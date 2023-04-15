@@ -47,7 +47,10 @@ function Sidebar() {
         <img
           title="Click here to Sign out"
           onClick={() => signOut()}
-          src={session.user?.image}
+          src={
+            session?.user?.image ||
+            `https://ui-avatars.com/api/?name=${session?.user?.name!}`
+          }
           alt="Profile picture"
           className="h-12 w-12 rounded-full cursor-pointer mx-auto mb-2 hover:opacity-50 transition-opacity duration-200 ease-in-out"
         />
